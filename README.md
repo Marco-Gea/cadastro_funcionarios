@@ -18,7 +18,7 @@
 - Debug do Software (00/00/0000 - not started);
 - Finalizar Projeto (00/00/0000 - not started);
 
-# Divisão do Desenvolvimento
+# BackLog da Aplicaçao e do Desenvolvimento
 - Inserir dados (not started);
 - Excluir dados (not started);
 - Validação de dados (not started);
