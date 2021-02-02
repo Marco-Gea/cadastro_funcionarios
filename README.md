@@ -18,8 +18,12 @@
 - Debug do Software (00/00/0000 - not started);
 - Finalizar Projeto (00/00/0000 - not started);
 
+<<<<<<< HEAD
 # Divisão do Desenvolvimento
 - Criar páginas (not started);
+=======
+# BackLog da Aplicaçao e do Desenvolvimento
+>>>>>>> 5c3ad46983ea333d6b21468ef17101358bdd3b62
 - Inserir dados (not started);
 - Excluir dados (not started);
 - Validação de dados (not started);
