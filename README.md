@@ -12,13 +12,14 @@
 
 # Planejamento do Desenvolvimento
 - Coleta de requisitos (01/02/2021 - done);
-- Modelagem de Software (00/00/0000 - not started);
+- Modelagem de Software (02/02/2021 - done);
 - Modelagem de Dados (00/00/0000 - not started);
 - Desenvolvimento do Software (00/00/0000 - not started);
 - Debug do Software (00/00/0000 - not started);
 - Finalizar Projeto (00/00/0000 - not started);
 
 # Divisão do Desenvolvimento
+- Criar páginas (not started);
 - Inserir dados (not started);
 - Excluir dados (not started);
 - Validação de dados (not started);
