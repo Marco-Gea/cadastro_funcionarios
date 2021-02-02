@@ -4,7 +4,7 @@
 - O intuito da aplicação é assimilar os conceitos de desenvolvimento de uma arquitetura MVC, bem como o funcionamento do Composer e Autoload e compreender a integração entre o back-end e o front-end de um sistema web.
 
 # Coleta de Requisitos
-- Cadastro de funcionários (Foto 3X4, Nome, Telefone, E-mail, CPF, RG, CEP, Endereço e Função);
+- Cadastro de funcionários (Foto 3X4, Nome, Telefone, E-mail, CPF, RG, CEP, UF, Cidade, Logradouro, Endereço, Número, Função e Observações);
 - Alterar dados dos funcionários cadastrados;
 - Listar todos os funcionários cadastrados;
 - Pesquisar funcionário pelo nome ou e-mail;
