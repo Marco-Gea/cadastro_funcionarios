@@ -9,10 +9,17 @@ class Route extends BootStrap{
 
     // Mapping the routes and yours action in application
     protected function initRoutes(){
-        $routes["home"] = Array(
+        
+        $routes["index"] = Array(
             'route' => '/',
-            'controller' => 'IndexController',
+            'controller' => 'AppController',
             'action' => 'index'
+        );
+
+        $routes["form"] = Array(
+            'route' => '/form',
+            'controller' => 'AppController',
+            'action' => 'form'
         );
 
         $this->setRoutes($routes);

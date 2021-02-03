@@ -1,0 +1,157 @@
+<div class="container-fluid p-5 mt-5">
+
+    <?php if(isset($this->view->funcionario)){ ?>
+        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/update?id=<?= $this->view->funcionario['id'] ?>"> 
+    <?php }else{ ?>
+        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/create"> 
+    <?php } ?> 
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do funcionário" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['nome'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-50">
+            <label for="fone">Telefone:</label>
+            <input type="text" class="form-control" id="fone" name="fone" placeholder="(99) 90000-9999" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['fone'];
+                } ?>">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@email.com" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['email'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-50">
+            <label for="cpf">CPF:</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="999.999.999-99" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['cpf'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-50">
+            <label for="rg">RG:</label>
+            <input type="text" class="form-control" id="rg" name="rg" placeholder="99.999.999-9" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['rg'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-25">
+            <label for="cep">CEP:</label>
+            <input type="text" class="form-control" id="cep" name="cep" placeholder="99999-999" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['cep'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-25">
+            <label for="uf">UF:</label>
+            <select class="form-control" id="uf" name="uf">
+
+                <?php if(isset($this->view->funcionario)){ ?>
+                    <option value="<?= $this->view->funcionario['uf'] ?>"><?= $this->view->funcionario['uf'] ?></option>
+                <?php } ?>
+
+                <option value="SP">SP</option>
+                <option value="PR">PR</option>
+                <option value="SC">SC</option>
+            </select>
+        </div>
+
+        <div class="form-group w-75">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Jaú" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['cidade'];
+                } ?>">
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereco:</label>
+            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua das Flores" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['endereco'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-75">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Bloco A" value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['logradouro'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-25">
+            <label for="numero">Número:</label>
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="937" value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['numero'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-50">
+            <label for="funcao">Função:</label>
+            <input type="text" class="form-control" id="funcao" name="funcao" placeholder="Vendedor" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['funcao'];
+                } ?>">
+        </div>
+
+        <div class="form-group w-25">
+            <label for="salario">Salario:</label>
+            <input type="number" class="form-control" id="salario" name="salario" placeholder="1500,00" required value="<?php 
+                if(isset($this->view->funcionario)){
+                    echo $this->view->funcionario['salario'];
+                } ?>">
+        </div>
+
+        <div class="form-group">
+
+            <?php if(isset($this->view->funcionario)){ ?>
+                <p for="foto" class="text-light">
+                    <?php 
+                        if(isset($this->view->funcionario)){
+                            echo $this->view->funcionario['foto'];
+                        } 
+                    ?>
+                </p>
+                <input type="text" name="fotoAnt" value="<?= $this->view->funcionario['foto']; ?>" style="display: none;">
+            <?php }else{ ?>
+                <label for="foto" class="text-light">Foto 3x4:</label>
+            <?php } ?>
+            <input id="foto" name="foto" type="file" style="display: block;" required/>
+
+        </div>
+
+        <div class="form-group">
+            <label for="obs">Observações:</label>
+            <textarea class="form-control" id="obs" name="obs" rows="3" style="resize: none;"><?php 
+                    if(isset($this->view->funcionario)){
+                        echo $this->view->funcionario['obs'];
+                    } 
+                ?>
+            </textarea>
+        </div>
+        
+        <div class="form-group mb-0 text-center">
+            <?php if(isset($this->view->funcionario)){ ?>
+                <button type="submit" class="btn btn-outline-light btn-lg w-25">Alterar</button>
+                <a href="/delete?id=<?= $this->view->funcionario['id'] ?>" class="btn btn-outline-light btn-lg w-25">Excluir</a> 
+            <?php }else{ ?>
+                <button type="submit" class="btn btn-lg btn-outline-light w-50">Cadastrar</button>
+            <?php } ?>
+        </div>
+
+    </form>
+</div>

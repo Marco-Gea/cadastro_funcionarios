@@ -16,5 +16,6 @@ endereco varchar(70) not null,
 logradouro varchar(50) not null,
 numero varchar(10) not null,
 funcao varchar(50) not null,
+salario numeric(10,2) not null,
 foto varchar(100) not null,
 obs text(1000));

@@ -1,0 +1,38 @@
+<div class="container w-75 p-5 mt-5 text-center">
+	<?php 
+				
+	if(isset($this->view->funcionarios)){
+			
+	?>
+
+	<table class="table table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col" class="w-25">Código</th>
+				<th scope="col" class="w-50">Nome</th>
+				<th scope="col" class="w-25">Função</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+			
+			<?php foreach ($this->view->funcionarios as $key => $funcionario) { ?>
+			
+			<tr>
+				<th scope="row"><?= $funcionario['id'] ?></th>
+				<td><a href="/form?id=<?= funcionario['id'] ?>"><?= $funcionario['nome'] ?></a></td>
+				<td><?= $funcionario['funcao'] ?></td>
+			</tr>
+
+			<?php } ?>
+			
+		</tbody>
+	</table>
+</div>
+	<?php }else{ ?>
+
+		<div class="bg-dark p-5 h-50">
+			<h1 class="text-light mt-5">Você ainda não possui funcionários cadastrados.</h1>
+			<a href="/form" class="h4">Cadastre já!</a>			
+		</div>
+	<?php } ?>

@@ -6,7 +6,7 @@ class Connection{
 
     public static function getDb(){
         $host = "127.0.0.1";
-        $db_name = "*db_name*";
+        $db_name = "db_cad-fun";
         $user = "root";
         $pass = "";
         try {

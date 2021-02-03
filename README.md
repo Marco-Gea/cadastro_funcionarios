@@ -4,7 +4,7 @@
 - O intuito da aplicação é assimilar os conceitos de desenvolvimento de uma arquitetura MVC, bem como o funcionamento do Composer e Autoload e compreender a integração entre o back-end e o front-end de um sistema web.
 
 # Coleta de Requisitos
-- Cadastro de funcionários (Foto 3X4, Nome, Telefone, E-mail, CPF, RG, CEP, UF, Cidade, Logradouro, Endereço, Número, Função e Observações);
+- Cadastro de funcionários (Foto 3X4, Nome, Telefone, E-mail, CPF, RG, CEP, UF, Cidade, Logradouro, Endereço, Número, Função, Salário e Observações);
 - Alterar dados dos funcionários cadastrados;
 - Listar todos os funcionários cadastrados;
 - Pesquisar funcionário pelo nome ou e-mail;
@@ -14,12 +14,12 @@
 - Coleta de requisitos (01/02/2021 - done);
 - Modelagem de Software (02/02/2021 - done);
 - Modelagem de Dados (02/02/2021 - done);
-- Desenvolvimento do Software (00/00/0000 - not started);
-- Debug do Software (00/00/0000 - not started);
+- Desenvolvimento e debug do Software (00/00/0000 - started);
 - Finalizar Projeto (00/00/0000 - not started);
 
 # BackLog da Aplicaçao e do Desenvolvimento
-- Inserir dados (not started);
+- Criar front-end da aplicação (done);
+- Inserir dados (started);
 - Excluir dados (not started);
 - Validação de dados (not started);
 - Listagem de todos os dados (not started);
