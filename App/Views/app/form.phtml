@@ -1,9 +1,9 @@
 <div class="container-fluid p-5 mt-5">
 
     <?php if(isset($this->view->funcionario)){ ?>
-        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/update?id=<?= $this->view->funcionario['id'] ?>"> 
+        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/update?id=<?= $this->view->funcionario['id'] ?>" enctype="multipart/form-data"> 
     <?php }else{ ?>
-        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/create"> 
+        <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/create" enctype="multipart/form-data"> 
     <?php } ?> 
 
         <div class="form-group">
@@ -130,7 +130,7 @@
             <?php }else{ ?>
                 <label for="foto" class="text-light">Foto 3x4:</label>
             <?php } ?>
-            <input id="foto" name="foto" type="file" style="display: block;" required/>
+            <input id="foto" type="file" name="foto" style="display: block;" required />
 
         </div>
 

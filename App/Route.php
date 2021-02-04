@@ -22,6 +22,12 @@ class Route extends BootStrap{
             'action' => 'form'
         );
 
+        $routes["create"] = Array(
+            'route' => '/create',
+            'controller' => 'AppController',
+            'action' => 'create'
+        );
+
         $this->setRoutes($routes);
     }
 

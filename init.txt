@@ -1,1 +1,12 @@
 Iniciando a aplicação.
+
+# Desenvolvimento back-end
+- Criar Model Funcionario;
+- Recuperar dados do formulário;
+- Criar query e persistir os dados no banco de dados;
+- Criar função de exclusão de dados;
+- Criar máscara pasa os campos do fomulário;
+- Validar dados do fomrulário (API de CEP, CPF, RG, Modificar o campo de arquivos);
+- Listar todos os funcionários;
+- Alterar dados dos funcionários;
+- Query de pesquisa de funcionários por nome ou e-mail;
