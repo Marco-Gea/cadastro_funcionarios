@@ -85,3 +85,55 @@
 
     </form>
 </div>
+
+<!-- Confirmação do cadastro de um novo funcionário -->
+<?php if($this->view->action == 'created'){ ?>
+    <div class="modal" id="modalInclusao" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success">CAD SYS</h5>
+            </div>
+            <div class="modal-body">
+                <p>Os dados de <?= $this->view->funcionario['nome'] ?> foram salvos com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Concluir</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $('#modalInclusao').modal('show')
+    </script>
+<?php } ?>
+<!-- Fim confirmação do cadastro de um novo funcionário -->
+
+<!-- Confirmar se o usuário deseja excluir os dados -->
+<?php if($this->view->action == 'delete'){ ?>
+    <div class="modal" id="modalExclusao" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">CAD SYS</h5>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente EXCLUIR PERMANENTEMENTE os dados de: <?= $this->view->funcionario['nome'] ?></p>
+            </div>
+            <div class="modal-footer">
+                <form action="/delete" method="post">
+                    <input type="hidden" name="id" value="<?= $this->view->funcionario['id'] ?>" />
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
+
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $('#modalExclusao').modal('show')
+    </script>
+<?php } ?>
+<!-- Fim confirmação se o usuário deseja excluir os dados -->
+

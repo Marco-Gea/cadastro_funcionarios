@@ -29,10 +29,34 @@
 		</tbody>
 	</table>
 </div>
-	<?php }else{ ?>
 
-		<div class="bg-dark p-5 h-50">
-			<h1 class="text-light mt-5">Você ainda não possui funcionários cadastrados.</h1>
-			<a href="/form" class="h4">Cadastre já!</a>			
-		</div>
-	<?php } ?>
+<?php }else{ ?>
+
+	<div class="bg-dark p-5 h-50">
+		<h1 class="text-light mt-5">Você ainda não possui funcionários cadastrados.</h1>
+		<a href="/form" class="h4">Cadastre já!</a>			
+	</div>
+<?php } ?>
+
+<!-- Confirmar a exclusão dos dados pelo usuário -->
+<?php if($this->view->action == 'deleted'){ ?>
+    <div class="modal" id="modalExcluido" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">CAD SYS</h5>
+            </div>
+            <div class="modal-body">
+                <p>Os dados foram excluídos com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $('#modalExcluido').modal('show')
+    </script>
+<?php } ?>
+<!-- Fim confirmação da exclusão dos dados pelo usuário -->

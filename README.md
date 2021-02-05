@@ -21,7 +21,7 @@
 - Criar front-end da aplicação (done);
 - Inserir dados (done);
 - Listagem de todos os dados (done);
-- Excluir dados (started);
-- Alterar dados inclusos (not started);
+- Excluir dados (done);
+- Alterar dados inclusos (started);
 - Validação de dados (not started);
 - Query de pesquisa por nome ou e-mail (not started); 

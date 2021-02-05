@@ -34,6 +34,12 @@ class Route extends BootStrap{
             'action' => 'funcionario'
         );
 
+        $routes["delete"] = Array(
+            'route' => '/delete',
+            'controller' => 'AppController',
+            'action' => 'delete'
+        );
+
 
         $this->setRoutes($routes);
     }

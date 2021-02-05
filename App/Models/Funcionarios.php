@@ -51,13 +51,6 @@ class Funcionarios extends Model{
         return $this;
     }
 
-    // Envia a foto para o servidor 
-    private function uploadImg(){
-        $this->__set('diretorio', 'imagens/' . $this->db->lastInsertId() . '/');
-        mkdir($this->__get('diretorio'), 0755);
-        move_uploaded_file($this->__get('tmp_img'), $this->__get('diretorio') . $this->__get('foto'));
-    }
-
     // Recupera lista de funcionarios a partir do nome ou email
     public function getFuncByNameOrEmail(){
         $query = "select * from tb_funcionarios where nome like :nome or email like :email";
@@ -84,6 +77,31 @@ class Funcionarios extends Model{
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    // Excluir dados do banco
+    public function delete(){
+        $query = "delete from tb_funcionarios where id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id', $this->__get('id'));
+        $stmt->execute();
+        $this->deleteImg();
+        return $this;
+    }
+
+    // Envia a foto para o servidor 
+    private function uploadImg(){
+        $this->__set('diretorio', 'imagens/' . $this->db->lastInsertId() . '/');
+        mkdir($this->__get('diretorio'), 0755);
+        move_uploaded_file($this->__get('tmp_img'), $this->__get('diretorio') . $this->__get('foto'));
+    }
+
+    // Remove a foto do funcionário que está sendo excluído
+    private function deleteImg(){
+        $this->__set('diretorio', 'imagens/' . $this->__get('id') . '/');
+        $func = $this->getFuncById();
+        unlink($this->__get('diretorio') . $func['foto']);
+        rmdir($this->__get('diretorio'));
     }
 }
 
