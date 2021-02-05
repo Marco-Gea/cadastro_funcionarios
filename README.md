@@ -19,9 +19,9 @@
 
 # BackLog da Aplicaçao e do Desenvolvimento
 - Criar front-end da aplicação (done);
-- Inserir dados (started);
-- Excluir dados (not started);
-- Validação de dados (not started);
-- Listagem de todos os dados (not started);
+- Inserir dados (done);
+- Listagem de todos os dados (done);
+- Excluir dados (started);
 - Alterar dados inclusos (not started);
+- Validação de dados (not started);
 - Query de pesquisa por nome ou e-mail (not started); 

@@ -28,6 +28,13 @@ class Route extends BootStrap{
             'action' => 'create'
         );
 
+        $routes["funcionario"] = Array(
+            'route' => '/funcionario',
+            'controller' => 'AppController',
+            'action' => 'funcionario'
+        );
+
+
         $this->setRoutes($routes);
     }
 

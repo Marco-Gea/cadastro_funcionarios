@@ -1,0 +1,87 @@
+<div class="container-fluid p-5 mt-5">
+
+    <form class="mx-auto w-50 p-3 bg-dark text-light" method="post" action="/form?id=<?= $this->view->funcionario['id'] ?>" enctype="multipart/form-data"> 
+
+        <div class="form-group">
+            <img class="foto img-fluid" width="300" src="./imagens/<?= $this->view->funcionario['id'] ?>/<?= $this->view->funcionario['foto'] ?>">
+        </div>
+
+        <div class="form-group">
+            <h3 style="display: inline-block;">Nome:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['nome'] ?></h5>
+        </div>
+
+        <div class="form-group w-50">
+            <h3 style="display: inline-block;">Telefone:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['fone'] ?></h5>
+        </div>
+
+        <div class="form-group">
+            <h3 style="display: inline-block;">E-mail:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['email'] ?></h5>
+        </div>
+
+        <div class="form-group w-50">
+            <h3 style="display: inline-block;">CPF:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['cpf'] ?></h5>
+        </div>
+
+        <div class="form-group w-50">
+            <h3 style="display: inline-block;">RG:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['rg'] ?></h5>
+        </div>
+
+        <div class="form-group w-25">
+            <h3 style="display: inline-block;">CEP:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['cep'] ?></h5>
+        </div>
+
+        <div class="form-group w-25">
+            <h3 style="display: inline-block;">UF:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['uf'] ?></h5>
+        </div>
+
+        <div class="form-group w-75">
+            <h3 style="display: inline-block;">Cidade:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['cidade'] ?></h5>
+        </div>
+
+        <div class="form-group">
+            <h3 style="display: inline-block;">Endereço:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['endereco'] ?></h5>
+        </div>
+
+        <div class="form-group w-75">
+            <h3 style="display: inline-block;">Logradouro:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['logradouro'] ?></h5>
+        </div>
+
+        <div class="form-group w-25">
+            <h3 style="display: inline-block;">Número:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['numero'] ?></h5>
+        </div>
+
+        <div class="form-group w-50">
+            <h3 style="display: inline-block;">Função:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['funcao'] ?></h5>
+        </div>
+
+        <div class="form-group w-25">
+            <h3 style="display: inline-block;">Salário:</h3>
+            <h5 style="display: inline-block;"><?= $this->view->funcionario['salario'] ?></h5>
+        </div>
+
+        <div class="form-group">
+            <h3>Observações:</h3>
+            <h5><?= $this->view->funcionario['obs'] ?></h5>
+        </div>
+        
+        <div class="form-group mb-0 text-center">
+    
+            <button type="submit" class="btn btn-outline-light btn-lg w-25">Alterar</button>
+            <a href="/funcionario?id=<?= $this->view->funcionario['id'] ?>&action=delete" class="btn btn-outline-light btn-lg w-25">Excluir</a> 
+            
+        </div>
+
+    </form>
+</div>

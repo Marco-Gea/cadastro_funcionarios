@@ -19,16 +19,17 @@ class Funcionarios extends Model{
         $this->$attr = $value;
     }
 
-    /* Insere um funcionário no banco de dados */
+    // Insere um funcionário no banco de dados 
     public function create(){
-        $query = "insert into tb_funcionarios(nome, fone, email, cpf, rg, uf, cidade, logradouro, endereco, numero, funcao, salario, foto, obs)
-        values(:nome, :fone, :email, :cpf, :rg, :uf, :cidade, :logradouro, :endereco, :numero, :funcao, :salario, :foto, :obs)";
+        $query = "insert into tb_funcionarios(nome, fone, email, cpf, rg, cep, uf, cidade, logradouro, endereco, numero, funcao, salario, foto, obs)
+        values(:nome, :fone, :email, :cpf, :rg, :cep, :uf, :cidade, :logradouro, :endereco, :numero, :funcao, :salario, :foto, :obs)";
         $stmt = $this->db->prepare($query);
         $stmt->bindValue(':nome', $this->__get('nome'));
         $stmt->bindValue(':fone', $this->__get('fone'));
         $stmt->bindValue(':email', $this->__get('email'));
         $stmt->bindValue(':cpf', $this->__get('cpf'));
         $stmt->bindValue(':rg', $this->__get('rg'));
+        $stmt->bindValue(':cep', $this->__get('cep'));
         $stmt->bindValue(':uf', $this->__get('uf'));
         $stmt->bindValue(':cidade', $this->__get('cidade'));
         $stmt->bindValue(':logradouro', $this->__get('logradouro'));
@@ -76,6 +77,14 @@ class Funcionarios extends Model{
         $stmt->execute();
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     } 
+
+    // Recupera todos os dados
+    public function getAll(){
+        $query = "select * from tb_funcionarios";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
