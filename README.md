@@ -22,6 +22,6 @@
 - Inserir dados (done);
 - Listagem de todos os dados (done);
 - Excluir dados (done);
-- Alterar dados inclusos (started);
-- Validação de dados (not started);
+- Alterar dados inclusos (done);
+- Validação de dados (started);
 - Query de pesquisa por nome ou e-mail (not started); 

@@ -6,7 +6,7 @@ Iniciando a aplicação.
 - Recuperar dados do formulário - done;
 - Listar todos os funcionários - done;
 - Criar função de exclusão de dados - done;
-- Alterar dados dos funcionários;
+- Alterar dados dos funcionários - done;
 - Criar máscara pasa os campos do fomulário;
 - Validar dados do fomrulário (API de CEP, CPF, RG, Modificar o campo de arquivos);
 - Query de pesquisa de funcionários por nome ou e-mail;

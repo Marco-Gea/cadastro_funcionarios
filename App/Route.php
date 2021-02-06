@@ -40,6 +40,12 @@ class Route extends BootStrap{
             'action' => 'delete'
         );
 
+        $routes["update"] = Array(
+            'route' => '/update',
+            'controller' => 'AppController',
+            'action' => 'update'
+        );
+
 
         $this->setRoutes($routes);
     }

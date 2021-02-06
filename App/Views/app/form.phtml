@@ -126,11 +126,11 @@
                         } 
                     ?>
                 </p>
-                <input type="text" name="fotoAnt" value="<?= $this->view->funcionario['foto']; ?>" style="display: none;">
+                <input type="hidden" name="fotoAnt" value="<?= $this->view->funcionario['foto']; ?>">
             <?php }else{ ?>
                 <label for="foto" class="text-light">Foto 3x4:</label>
             <?php } ?>
-            <input id="foto" type="file" name="foto" style="display: block;" required />
+            <input id="foto" type="file" name="foto" style="display: block;"/>
 
         </div>
 
@@ -147,7 +147,7 @@
         <div class="form-group mb-0 text-center">
             <?php if(isset($this->view->funcionario)){ ?>
                 <button type="submit" class="btn btn-outline-light btn-lg w-25">Alterar</button>
-                <a href="/delete?id=<?= $this->view->funcionario['id'] ?>" class="btn btn-outline-light btn-lg w-25">Excluir</a> 
+                <a href="/funcionario?id=<?= $this->view->funcionario['id'] ?>&action=delete" class="btn btn-outline-light btn-lg w-25">Excluir</a> 
             <?php }else{ ?>
                 <button type="submit" class="btn btn-lg btn-outline-light w-50">Cadastrar</button>
             <?php } ?>

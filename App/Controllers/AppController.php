@@ -100,6 +100,31 @@ class AppController extends Action{
         header('Location: /?action=deleted');
     }
 
+    // Alterar os dados cadastrados pelo ID
+    public function update(){
+
+        // Verificação para impedir o acesso indevido a essa página
+        if(!isset($_GET['id']) && !isset($_POST['nome']) && !isset($_POST['email']) && !isset($_POST['cpf'])){
+            header('Location: /');
+        }
+
+        // Recuperando dados do fomulário
+        $funcionario = Container::getModel('Funcionarios');
+        $funcionario->__set('id', $_GET['id']);
+        foreach ($_POST as $key => $info) {
+            $funcionario->__set($key, $info);
+        }
+        $funcionario->__set('foto', $_FILES['foto']['name']);
+        $funcionario->__set('tmp_img', $_FILES['foto']["tmp_name"]);
+        
+        // Atualizando dados no banco
+        $funcionario->update();
+
+        // Redirecionando usuário para a visualização dos dados
+        header('Location: /funcionario?id=' . $_GET['id'] . '&action=updated');
+
+    }
+
     // Recupera uma ação, se houver, para disparar um modal na view
     private function getAction(){
         return isset($_GET['action']) ? $_GET['action'] : null;

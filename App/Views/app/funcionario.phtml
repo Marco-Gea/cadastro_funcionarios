@@ -137,3 +137,25 @@
 <?php } ?>
 <!-- Fim confirmação se o usuário deseja excluir os dados -->
 
+<!-- Confirmação do cadastro de um novo funcionário -->
+<?php if($this->view->action == 'updated'){ ?>
+    <div class="modal" id="modalAlteracao" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-warning">CAD SYS</h5>
+            </div>
+            <div class="modal-body">
+                <p>Os dados de <?= $this->view->funcionario['nome'] ?> foram altualizados com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Concluir</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $('#modalAlteracao').modal('show')
+    </script>
+<?php } ?>
+<!-- Fim confirmação do cadastro de um novo funcionário -->

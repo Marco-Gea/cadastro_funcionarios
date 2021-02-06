@@ -8,7 +8,7 @@ use MF\Model\Model;
 //Funcionarios's class
 class Funcionarios extends Model{
     private $id, $nome, $fone, $email, $cpf, $rg, $cep, $uf, $cidade, $logradouro, $endereco, $numero, $funcao, $salario, $obs;
-    private $foto, $tmp_img;
+    private $foto, $fotoAnt, $tmp_img;
     private $search;
 
     public function __get($attr){
@@ -86,6 +86,44 @@ class Funcionarios extends Model{
         $stmt->bindValue(':id', $this->__get('id'));
         $stmt->execute();
         $this->deleteImg();
+        return $this;
+    }
+
+    // Alterar os dados do banco
+    public function update(){
+        $query = "update tb_funcionarios
+                    set nome = :nome, fone = :fone, email = :email, cpf = :cpf, 
+                    rg = :rg, cep = :cep, uf = :uf, cidade = :cidade, logradouro = :logradouro, 
+                    endereco = :endereco, numero = :numero, funcao = :funcao, salario = :salario, foto = :foto, obs = :obs
+                    where id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue('id', $this->__get('id'));
+        $stmt->bindValue(':nome', $this->__get('nome'));
+        $stmt->bindValue(':fone', $this->__get('fone'));
+        $stmt->bindValue(':email', $this->__get('email'));
+        $stmt->bindValue(':cpf', $this->__get('cpf'));
+        $stmt->bindValue(':rg', $this->__get('rg'));
+        $stmt->bindValue(':cep', $this->__get('cep'));
+        $stmt->bindValue(':uf', $this->__get('uf'));
+        $stmt->bindValue(':cidade', $this->__get('cidade'));
+        $stmt->bindValue(':logradouro', $this->__get('logradouro'));
+        $stmt->bindValue(':endereco', $this->__get('endereco'));
+        $stmt->bindValue(':numero', $this->__get('numero'));
+        $stmt->bindValue(':funcao', $this->__get('funcao'));
+        $stmt->bindValue(':salario', $this->__get('salario'));
+        $stmt->bindValue(':obs', $this->__get('obs'));
+
+        // Caso o usuário selecione uma nova foto, ela será enviada para o servidor
+        if($this->__get('foto') != '' && $this->__get('foto') != $this->__get('fotoAnt')){
+            $stmt->bindValue(':foto', $this->__get('foto'));
+            $this->deleteImg();
+            $this->uploadImg();
+        }else{
+            $stmt->bindValue(':foto', $this->__get('fotoAnt'));
+        }
+
+        $stmt->execute();
+
         return $this;
     }
 
