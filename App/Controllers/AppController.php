@@ -125,6 +125,28 @@ class AppController extends Action{
 
     }
 
+    // Pesquisando funcionário pelo nome ou email
+    public function search(){
+        // Verificação para impedir o acesso indevido a essa página
+        if(!isset($_POST['search'])){
+            header('Location: /');
+        }
+
+        // Recuperando dados do fomulário
+        $funcionario = Container::getModel('Funcionarios');
+        $funcionario->__set('nome', $_POST['search']);
+        $funcionario->__set('email', $_POST['search']);
+        
+        // Procurando por funcionários com e-mail ou nome semelhante ao da pesquisa
+        $this->view->funcionarios = $funcionario->getFuncByNameOrEmail();
+
+        // Recupera uma ação, se houver, para disparar um modal na view
+        $this->view->action = $this->getAction();
+
+        // Carregando a página para a visualização da pesquisa
+        $this->render('index');
+    }
+
     // Recupera uma ação, se houver, para disparar um modal na view
     private function getAction(){
         return isset($_GET['action']) ? $_GET['action'] : null;

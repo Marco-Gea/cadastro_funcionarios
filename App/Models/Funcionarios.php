@@ -44,11 +44,21 @@ class Funcionarios extends Model{
 
         $this->uploadImg();
 
-        $funcionario = $this->getFuncByNameOrEmail();
+        $funcionario = $this->getFuncByCpf();
 
         $this->__set('id', $funcionario['id']);
 
         return $this;
+    }
+
+    // Recupera lista de funcionarios a partir do cpf
+    public function getFuncByCpf(){
+        $query = "select * from tb_funcionarios where cpf like :cpf";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':cpf', "%" . $this->__get('cpf') . "%");
+        $stmt->execute();
+
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
     // Recupera lista de funcionarios a partir do nome ou email
@@ -59,7 +69,7 @@ class Funcionarios extends Model{
         $stmt->bindValue(':email', "%" . $this->__get('email') . "%");
         $stmt->execute();
 
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     // Recupera funcionário pelo ID

@@ -46,6 +46,12 @@ class Route extends BootStrap{
             'action' => 'update'
         );
 
+        $routes["search"] = Array(
+            'route' => '/search',
+            'controller' => 'AppController',
+            'action' => 'search'
+        );
+
 
         $this->setRoutes($routes);
     }
